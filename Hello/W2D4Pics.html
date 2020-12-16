@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <img src="img/fantasy_sword.jpg" alt="" id = 'life'>
+
+
+    <button onclick="changeImage(-1)">Previous</button>
+    <button onclick="changeImage(1)">Forward</button>
+
+  <script type="text/javascript">
+    var index = 0
+    function changeImage(x) {
+      var images = ["img/fantasy_sword.jpg", "img/King1jpg.jpg", "img/king2.jpg",
+      "img/Queen1.jpg", "img/Queen2.jpg"]
+
+      if (x>0) { if (index<4) {index++;} else {index = 0;} }
+
+      if (x<0) { if (index>0) {index--;} else {index = 4;} }
+
+      document.getElementById('life').src = images[index];
+      console.log(index);
+    }
+  </script>
+  </body>
+</html>

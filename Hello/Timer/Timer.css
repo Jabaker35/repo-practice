@@ -1,0 +1,46 @@
+#timer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+#clock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  border-radius: 50%;
+  height: 400px;
+  width: 400px;
+  font-family: Arial, Helvetic, sans serif;
+  font-size: 100px;
+  margin-left: calc(50% - 200px)
+}
+.timer-container{
+  display; flex;
+  flex-direction: column;
+  align-items: center;
+}
+#inputs-wrapper {
+  margin-left: calc(50% - 200px);
+}
+.time-input {
+  height: 100px;
+  width: 100px;
+  background-color: rgba(0,0,0,0.1);
+  border: none;
+  font-size 100px;
+  font-weight: bold;
+}
+.blue {
+  background-color: #0781D4;
+}
+.red {
+  background-color: red;
+}
+.hidden {
+  visibility: hidden;
+}

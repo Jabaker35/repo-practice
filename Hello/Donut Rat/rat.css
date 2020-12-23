@@ -1,3 +1,16 @@
+html {
+  background: url(https://www.askideas.com/media/40/Very-Beautiful-Night-Scene-Of-Brooklyn-Bridge-And-Manhattan-City.jpg) no-repeat center fixed;
+  background-size: cover;
+}
+
+p {
+  color: white;
+}
+
+#center {
+  text-align: center;
+}
+
 button {
 
 }

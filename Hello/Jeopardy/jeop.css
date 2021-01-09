@@ -15,7 +15,7 @@
     -webkit-box-direction: normal;
             flex-direction: column;
   }
-  
+
   .board .row {
     -webkit-box-flex: 1;
             flex: 1;
@@ -79,7 +79,7 @@
 #container{
   display: grid;
   grid-template-columns: [first] 70px [line2] 70px [line3] 70px;
-  grid-template-rows:  [line1] 685% [line2] 10%;
+  grid-template-rows:  [line1] 50% [line2] 10%;
   justify-content: space-around;
   position: relative;
   text-align: center;

@@ -42,7 +42,7 @@ while (battle.length > 0) {
   } console.log("%c Great Job Captain, Alien ship destroyed!", "font-weight: bold; font-variant: small-caps; font-size: 15px; font-variant: small-caps; color: blue");
   //Checks the player's health (hull) to see it has reached 0 before continuing game
   if (player.hull <= 0) {
-    console.log("%c We did our best captain!", "font-weight: bold; font-variant: small-caps; font-size: 15px; background: azure; border: 1px solid red; color: orange");
+    console.log("%c Your ship has been destroyed!", "font-weight: bold; font-variant: small-caps; font-size: 25px; background: azure; border: 1px solid red; color: brown");
     break;
   }; //Confirm if the player wants to continue the same battle
   if (!confirm("Continue: Yes/No?")) {

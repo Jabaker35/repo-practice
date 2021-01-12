@@ -1,0 +1,40 @@
+#container {
+  display: grid;
+  grid-area: auto;
+  width: 100vw;
+  height: 100vh;
+  background-color: lightgray;
+}
+​
+.sidebar {
+  grid-column-end: 2rem;
+  border: 1px solid black;
+  align-items:center;
+  text-align: center;
+  line-height: 35px;
+}
+​
+.reviews {
+  grid-row:auto;
+  border: 1px solid black;
+}
+​
+.ratings {
+  grid-row:auto;
+  border: 1px solid black;
+}
+​
+.sentiment {
+  grid-row:auto;
+  border: 1px solid black;
+}
+​
+.website {
+  grid-row:auto;
+  border: 1px solid black;
+}
+​
+.bottom-inside {
+  grid-row:auto;
+  background-color: darkgrey;
+}

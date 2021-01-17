@@ -1,40 +1,50 @@
-#container {
+/* .app {
   display: grid;
-  grid-area: auto;
+  grid-template-areas: "sidebar review rating sentiment" 
+                        "sidebar visitors visitors visitors"
+                        "sidebar visitors visitors visitors";
   width: 100vw;
   height: 100vh;
-  background-color: lightgray;
+  background-color: ;
 }
 ​
+a {
+  display: block;
+}
+
 .sidebar {
-  grid-column-end: 2rem;
-  border: 1px solid black;
-  align-items:center;
-  text-align: center;
+  grid-area: sidebar;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 100px;
+  background-color: rgba(97, 81, 81, 0.431);
+  border: solid black 4px;
+  align-self:center;
   line-height: 35px;
+  border-radius: 10px;
 }
 ​
-.reviews {
-  grid-row:auto;
-  border: 1px solid black;
+.review {
+  grid-area: review;
+  display: flex;
+  border: solid black 4px;
+  width: 20%;
+  height: 34%;
 }
 ​
-.ratings {
-  grid-row:auto;
-  border: 1px solid black;
+.rating {
+  grid-area: rating;
+  border: 4px solid black;
 }
 ​
 .sentiment {
-  grid-row:auto;
+  grid-area: sentiment;
   border: 1px solid black;
 }
 ​
-.website {
-  grid-row:auto;
+.visitors {
+  grid-area: visitors;
   border: 1px solid black;
-}
-​
-.bottom-inside {
-  grid-row:auto;
-  background-color: darkgrey;
-}
+} */

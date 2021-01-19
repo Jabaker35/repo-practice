@@ -1,0 +1,19 @@
+html {
+  background-image: url("http://3.bp.blogspot.com/-KeZwlFfrHNc/U8C0tvBaR1I/AAAAAAAAleo/3s3F09wyWYY/s1600/american-groceries-in-the-philippines.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.container {
+    display: flex;
+    vertical-align: middle;
+    border-radius: 2px;
+    background-color: brown;
+    width: 25%;
+    align-items: center;
+}
+
+ul {
+    list-style-type: none;
+}

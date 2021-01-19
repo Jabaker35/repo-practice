@@ -1,60 +1,86 @@
 class App extends React.Component {
     state = {
-            item: '',
-            brand: '',
-            units: '',
-            quantity: 0,
+        groceries,
+        item: "",
+        brand: "",
+        units: "",
+        quantity: ""
+    }
+
+    itemChange = (event) => {
+        this.setState({
+            [event.target.id]: event.target.value
+        })
+    }
+
+    submit = (event) => {
+        event.preventDefault()
+        console.log("submit");
+        const item = {
+            item: this.state.item,
+            brand: this.state.brand,
+            units: this.state.units,
+            quantity: this.state.quantity,
+            isPurchased: false
+        } 
+        this.setState({
+            groceries: [
+                item, ...this.state.groceries
+            ],
+            item: "",
+            brand: "",
+            units: "",
+            quantity: "",
+        })
+    }
+
+    render() {
+        return (<div className="list">
+            <form onSubmit={this.submit}>
+                <input id="item" onChange={this.itemChange} type='text' value={this.state.item}></input><br/>
+                <input id="brand" onChange={this.itemChange} type='text' value={this.state.brand}></input><br/>
+                <input id="units" onChange={this.itemChange} type='text' value={this.state.units}></input><br/>
+                <input id="quantity" onChange={this.itemChange} type='number' value={this.state.quantity}></input><br/>
+                <button>Submit</button>
+            </form>
+            
+                <ul>
+                    {this.state.groceries.map((grocery) => 
+                        !grocery.isPurchased? <li>
+                            <ul>Item: {grocery.item}</ul><br/>
+                            <ul>Brand: {grocery.brand}</ul><br/>
+                            <ul>Units: {grocery.units}</ul><br/>
+                            <ul>Quantity: {grocery.quantity}</ul><br/>
+                        </li> :"")}                                                                                         
+               </ul>
+            
+        </div>)
     }
 }
 
-itemChange = (event) => {
-    this.ListeningStateChangedEvent({
-        [event.target.id]: event.target.value
-    })
-}
-
-submit = (event) => {
-    event.preventDefault()
-    console.log("submit");
-    const item = {
-        item: this.state.item,
-        brand: this.state.brand,
-        units: this.state.units,
+const groceries = [
+    {
+        item: 'Soda',
+        brand: 'Sprite',
+        units: '2 liters',
         quantity: 1,
         isPurchased: false
-    } this.ListeningStateChangedEvent({
-        groceries: [
-            item, ...this.state.groceries
-        ],
-        item: "",
-        brand: "",
-        units: ""
-    })
-}
-
-render() {
-    return (<div>
-        <form onSubmit={this.submit}>
-            <input id="item" onChange={this.itemChange} type='text' value={this.state.item}></input>
-            <input id="brand" onChange={this.itemChange} type='text' value={this.state.brand}></input>
-            <input id="units" onChange={this.itemChange} type='text' value={this.state.units}></input>
-            <input id="quantity" onChnge={this.itemChange} type='number' value={this.state.units}></input>
-            <button>Submit</button>
-        </form>
-
-        <div>
-            <ul>
-                {       this.state.groceries.map(
-                        (grocery) => !grocery.isPurchased
-                        ? <li>{grocery.item}</li>: "")
-                }
-            </ul>
-        </div>
-    </div>)
-}
+    }, {
+        item: 'Chips',
+        brand: 'Pringles',
+        units: '3 oz',
+        quantity: 1,
+        isPurchased: true
+    }, {
+        item: 'Cookies',
+        brand: 'Thin Oreos',
+        units: '16 oz',
+        quantity: 1,
+        isPurchased: true
+    }
+]
 
 
 ReactDOM.render(
-    <App/>,
-    document.querySelector('#container')
-)
+    <App/>, 
+    document.querySelector('.container'))

@@ -1,15 +1,20 @@
-/* .app {
+.app {
   display: grid;
   grid-template-areas: "sidebar review rating sentiment" 
                         "sidebar visitors visitors visitors"
                         "sidebar visitors visitors visitors";
   width: 100vw;
   height: 100vh;
-  background-color: ;
+  /* background-color: rgb(117, 72, 72); */
+  grid-gap: 5px;
+  border: black;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+
 }
 ​
 a {
-  display: block;
+  /* display: block; */
 }
 
 .sidebar {
@@ -23,7 +28,7 @@ a {
   border: solid black 4px;
   align-self:center;
   line-height: 35px;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 ​
 .review {
@@ -32,6 +37,8 @@ a {
   border: solid black 4px;
   width: 20%;
   height: 34%;
+  border-radius: 5px;
+  background-color:rgba(97, 81, 81, 0.431)
 }
 ​
 .rating {
@@ -47,4 +54,4 @@ a {
 .visitors {
   grid-area: visitors;
   border: 1px solid black;
-} */
+}

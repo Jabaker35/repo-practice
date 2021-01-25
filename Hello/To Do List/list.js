@@ -69,7 +69,7 @@ function filterTodo(e) {
       //uncatagorized
       case "all":
         break;
-      //only displays whatever is completed
+      //only displays the marked
       case "completed":
         if(todo.classList.contains('completed')){
           todo.style.display= 'flex';
@@ -77,7 +77,7 @@ function filterTodo(e) {
           todo.style.display = 'none';
         }
         break;
-      //only displays whatever is uncompleted
+      //only displays the unmarked item
       case "uncompleted":
         if(!todo.classList.contains('completed')){
           todo.style.display= 'flex';

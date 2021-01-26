@@ -66,7 +66,7 @@ function filterTodo(e) {
   const todos = todoList.childNodes;
   todos.forEach(function(todo){
     switch(e.target.value) {
-      //uncatagorized
+      //only displays (un)marked items
       case "all":
         break;
       //only displays the marked

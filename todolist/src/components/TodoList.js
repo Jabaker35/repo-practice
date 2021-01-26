@@ -12,6 +12,7 @@ function TodoList({todos, setTodos, filteredTodos}) {
     <div className="todo-container">
 
       <ul className="todo-list">
+      
         {filteredTodos.map((todo) => (
           <Todo 
           setTodos={setTodos} 
@@ -20,6 +21,7 @@ function TodoList({todos, setTodos, filteredTodos}) {
           todo={todo}
           text={todo.text} />
         ))}
+        
       </ul>
 
     </div>

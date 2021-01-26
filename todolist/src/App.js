@@ -22,15 +22,18 @@ function App() {
     filterHandler();
   }, ([todos, status]));
 
-  //Animation function to the 
+  //Filter function for the (un)marked items
   const filterHandler = () => {
     switch(status){
+      //only displays marked items
       case 'completed': 
         setFilteredTodos(todos.filter(todo => todo.completed === true));
         break;
+      //only diplays unmarked items
       case 'uncompleted':
         setFilteredTodos(todos.filter(todo => todo.completed === false));
         break;
+      //only displays (un)marked items
       default:
         setFilteredTodos(todos);
         break;
@@ -41,7 +44,6 @@ function App() {
   const saveLocalTodos = () => {
       localStorage.setItem('todos', JSON.stringify(todos));
     }
-  };
 
   //Retreives item from the local storage
   const getLocalTodos = () => {

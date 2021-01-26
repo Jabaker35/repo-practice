@@ -21,7 +21,7 @@ function Todo({text,todo,todos,setTodos}) {
     //HTML elements
     return (
         <div className='todo'>
-
+            
             <li className={`todo-item ${todo.completed ? 'completed' : ''}`}>{text}</li>
 
             <button onClick={completeHandler} className='complete-btn'>
@@ -31,7 +31,7 @@ function Todo({text,todo,todos,setTodos}) {
             <button onClick={deleteHandler} className='trash-btn'>
             <i className='fas fa-trash'></i>
             </button>
-
+            
         </div>
     );
 }

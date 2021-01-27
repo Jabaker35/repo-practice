@@ -3,7 +3,7 @@ import React from 'react';
 function Todo({text,todo,todos,setTodos}) {
     //Control the function of the delete button
     const deleteHandler = () => {
-        setTodos(todos.filter(el => el.id !== todo.id))
+        setTodos(todos.filter(el => el.id !== todo.id));
     };
 
     //Control the function of the items added

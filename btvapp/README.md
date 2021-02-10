@@ -1,5 +1,3 @@
-Beyond the Vision
+Beyond The Vision
 
-Welcome to Beyond the Vision which is a news blog where you can get a collection of the best news within one place. You don't have to go, research, or try to find the best article(s) without putting it into a search engine. A lot of times information can be too much or not as current as you desire to be so instead of trying to figure out where to go to get the information or clicking on a many articles you can come here as a one stop shop. You are guarenteed to get the current relevant news without figuring out where to go.
-
-My desire is to help people find a safe place where a person can find their voice from exploring their interests through this news blog. It is not just about the news but it is about a person indulging further into their interest so they can stay relevant. 
+My desire is for everyone to find their voice in a safe space by indulging into their favorite interests or just by curiousity. Search engines can be overwhelming with articles and information 

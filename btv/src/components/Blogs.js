@@ -23,7 +23,7 @@ const Blogs = () => {
     //Loads the request of the user inquiry by retreiving data one at a time
     useEffect(() => {
         axios
-        .get(blogs.url)
+        .get(blog_url)
         .then((response) => {
             dispatch(setBlogData(response.data))
             setBlogs(response.data)

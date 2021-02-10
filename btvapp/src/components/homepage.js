@@ -1,18 +1,18 @@
 import React from 'react';
+//Importing Google Login API
 import GoogleLogin from 'react-google-login';
+//Importing dispatch and selector from React
 import {useDispatch, useSelector} from 'react-redux';
-import {
-    selectSignedIn,
-    setSignedIn,
-    setUserData,
-  } from "../features/userslice";
-  import "../styling/home.css";
+//Importing Signed In and User Data from Userslice.js
+import {selectSignedIn, setSignedIn, setUserData} from "../features/userslice";
+//Importing the styling CSS
+import "../styling/home.css";
 
 const Homepage = () => {
     //Function that animates whether the user has signed in or not
     const isSignedIn = useSelector(selectSignedIn);
 
-    //Function to send the user signed status into the navbar
+    //Function to send the user logged in status into the navbar
     const dispatch = useDispatch();
     const login = (response) => {
         console.log(response);
@@ -25,8 +25,8 @@ const Homepage = () => {
         <div className='homepage__page' style={{display:isSignedIn ? 'none' : ''}}>
             {!isSignedIn ? (
                 <div className='login__message'>
-                <h2><i className='fas fa-broadcast-tower'></i></h2>
-                <h1>Welcome to Beyond The Vision</h1>
+                <h1>Welcome to Beyond 
+                The Vision <i className='fas fa-broadcast-tower'></i></h1>
                 <p>A safe place where you can find your voice through
                 your favorite articles in one place.</p>
             <GoogleLogin

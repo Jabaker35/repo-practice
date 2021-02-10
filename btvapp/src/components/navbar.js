@@ -6,11 +6,8 @@ import {GoogleLogout} from 'react-google-login';
 //Importing Dispatch and useSelector feature
 import {useDispatch, useSelector} from 'react-redux';
 //Importing Primary features between user data and input field of the userSlice
-import {selectSignedIn, 
-    selectUserData, 
-    setInput, 
-    setSignedIn, 
-    setUserData} from "../features/userslice";
+import {selectSignedIn, selectUserData, setInput, 
+    setSignedIn, setUserData} from "../features/userslice";
 //Importing CSS style to Navbar
 import '../styling/navbar.css'
 
@@ -22,7 +19,7 @@ const Navbar = () => {
     //Check the sign in status of the user in the navbar
     const isSignedIn = useSelector(selectSignedIn);
 
-    //Function to display user's name and image in the navbar
+    //Function to display user's name and personal image in the navbar
     const userData = useSelector(selectUserData)
 
     //Created dispatch function for Google Login API
@@ -34,12 +31,13 @@ const Navbar = () => {
         dispatch(setUserData(null))
     }
 
-    //Displays the data from the user inquery
+    //Displays the data from the user inquiry
     const handleClick = (e) => {
         e.preventDefault();
         dispatch(setInput(inputValue))
     }
 
+    //Responds to user's input inquiry by pressing the 'Enter' key
     const handleKeyPress = e => {
         if (e.key === 'Enter') {
             handleClick(e)
@@ -73,7 +71,7 @@ const Navbar = () => {
                     buttonText='Logout'
                     onLogoutSuccess={logout}
                 />
-            </div>) : (<h1 className='notSignedIn'>User not available <i className='far fa-frown'></i><i className='far fa-heart-broken'></i></h1> )}
+            </div>) : (<h1 className='notSignedIn'>User not available <i className='far fa-frown, far fa-heart-broken'></i></h1> )}
         </div>
     )
 }

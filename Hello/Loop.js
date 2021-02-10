@@ -96,7 +96,7 @@ if (num > 100) {
 } else {
   final = num * 2;
 }
-console.log(final)
+console.log(final);
 
 
 const fb = [];

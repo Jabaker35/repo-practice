@@ -5,8 +5,8 @@ import {
   selectSignedIn,
   setSignedIn,
   setUserData,
-} from "./features/userslice";
-import "./styling/home.css";
+} from "../features/userslice";
+import "../styling/home.css";
 
 const Homepage = () => {
   const isSignedIn = useSelector(selectSignedIn);
@@ -14,8 +14,8 @@ const Homepage = () => {
   const dispatch = useDispatch();
   const login = (response) => {
     console.log(response);
-    dispatch(setSignedIn(true));
-    dispatch(setUserData(response.profileObj));
+    dispatch(setSignedIn => (true));
+    dispatch(setUserData => (response.profileObj));
   };
 
   return (

@@ -11,8 +11,8 @@ const userSlice = createSlice({
         searchInput:'tech',
         blogData: null,
     },
-    //Changes the initial state to true once the user has input a text
-    reducer:{
+    //Changes the initial state to respond to the user's input
+    reducers:{
         setSignedIn: (state, action) => {
             state.isSignedIn = action.payload;
         },

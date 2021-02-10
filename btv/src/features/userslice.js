@@ -12,7 +12,7 @@ const userSlice = createSlice({
         blogData: null,
     },
     //Changes the initial state to true once the user has input a text
-    reducer:{
+    reducers:{
         setSignedIn: (state, action) => {
             state.isSignedIn = action.payload;
         },

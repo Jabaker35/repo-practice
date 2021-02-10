@@ -73,7 +73,7 @@ const Navbar = () => {
                     buttonText='Logout'
                     onLogoutSuccess={logout}
                 />
-            </div>) : (<h1 className='notSignedIn'>User not available <i className='far fa-frown'></i><i className='far fa-heart-broken'></i></h1> )}
+            </div>) : (<h1 className='notSignedIn'>User not available <i className='far fa-frown'></i></h1> )}
         </div>
     )
 }

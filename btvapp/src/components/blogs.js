@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 //Importing a better Fetch function for other url's
-import axios from 'node_modules/axios';
+import axios from 'axios';
+//Importing dispatch and selector functions from React
 import {useDispatch, useSelector} from 'react-redux';
 //Importing Primary features from userSlice
 import {selectUserInput, setBlogData} from '../features/userslice';
@@ -11,7 +12,9 @@ import '../styling/blogs.css';
 const Blogs = () => {
     //User will be able to type their request into the input field and send request to the API
     const searchInput = useSelector(selectUserInput);
-    const blog_url = `https://gnews.io/api/v4/search?q=${searchInput}&token=cee4877436df5ecce3776a3857bc160d`;
+    //API used to retrieve the user's inquiry
+    const blog_url = `https://gnews.io/api/v4/search?q=${searchInput}max=6&token=cee4877436df5ecce3776a3857bc160d`;
+    
 
     //Function to retreive the data from the user's inquiry
     const dispatch = useDispatch();
@@ -23,7 +26,7 @@ const Blogs = () => {
     //Loads the request of the user inquiry by retreiving data one at a time
     useEffect(() => {
         axios
-        .get(blogs.url)
+        .get(blog_url)
         .then((response) => {
             dispatch(setBlogData(response.data))
             setBlogs(response.data)

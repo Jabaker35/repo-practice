@@ -10,8 +10,8 @@ public class Main {
                 List.of("New","to","array","functions"));
 
         System.out.println("copied: "+ Collections.copyList(stringList));
-        System.out.println("sliced (2,3): "+ Collections.sliceList(stringList, 2,3));
-        Collections.swap(stringList, 1,4);
+        System.out.println("sliced (2,3): "+ Collections.sliceList(stringList, 2));
+        Collections.swap(stringList, 1,3);
         System.out.println("swapped (1,4): "+ stringList);
         System.out.println("is stringList empty? "+ Collections.isEmpty(stringList));
 

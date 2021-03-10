@@ -27,11 +27,9 @@ public class Collections {
 
     //Swap two elements in an array list
     public static <A> void swap(List<A> list, int index1, int index2) {
-        if (index1 < list.size() && index2 < list.size()){
             A temp = list.get(index1);
             list.set(index1, list.get(index2));
             list.set(index2, temp);
-        }
     }
 
     //Test an array list is empty or not
@@ -57,10 +55,8 @@ public class Collections {
     }
 
     //Number of elements in a hash set
-    public static <A> void getSetSize(Set<A> set){
-        for (A element: set){
-            System.out.println("Set Element: "+element);
-        }
+    public static <A> int getSetSize(Set<A> set){
+        return set.size();
     }
 
     //Iterate through all elements in a hash list

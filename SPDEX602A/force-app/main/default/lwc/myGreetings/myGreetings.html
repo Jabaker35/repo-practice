@@ -1,0 +1,25 @@
+<template>
+    <lightning-card>
+
+        <div class = "slds-var-m-around_medium">
+
+            <lightning-input label = "Person to Greet" placeholder = "Enter your name here..." value = {personInput} onchange={handleChange}></lightning-input>
+            <p>Greetings from {personToGreet}!</p>
+
+            <lightning-button label = "Toggle" onclick = {handleToggle}></lightning-button>
+            <template if:true = {showThis}>
+                <p>This is some random text</p>
+                <p>Another line to show you.</p>
+            </template>
+
+            <div>
+                <lightning-input name = "firstName" label = "First Name" onchange = {handleName}></lightning-input>
+                <lightning-input name = "lastName" label = "Last Name" onchange = {handleName}></lightning-input>
+                <p>Full Name: {fullName}</p>
+            </div>
+
+        </div>
+
+    </lightning-card>
+    <c-prop-example property1 = {personToGreet} property2 = "Another Value" onmyevent = {handleMyEvent}></c-prop-example>
+</template>

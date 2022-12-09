@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title = "Related Records" icon-name = "standard:account">
+        <div class="slds-var-m-around_medium">
+            <c-opportunity-list record-id={accountId}></c-opportunity-list>
+        </div>
+        <div class="slds-var-m-around_medium">
+            <c-case-list record-id={accountId}></c-case-list>
+        </div>
+    </lightning-card>
+</template>

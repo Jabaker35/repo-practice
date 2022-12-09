@@ -1,0 +1,13 @@
+<template>
+    <template if:true={records}>
+        <template for:each={records} for:item="cas">
+            <div key={cas.Id} class="slds-border_top">
+                <c-case-card case-id={cas.Id} case-number={cas.CaseNumber} subject={cas.Subject} status={cas.Status} 
+                priority={cas.Priority}></c-case-card>
+            </div>            
+        </template>
+    </template>
+    <template if:false={records} class="slds-var-m-around_small">
+        <p>No related Cases to display.</p>
+    </template>
+</template>

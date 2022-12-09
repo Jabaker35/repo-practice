@@ -1,0 +1,11 @@
+<template>
+    <lightning-card class = "slds-var-m-around_medium">
+        <div>
+            <p>Name: {name}</p> <!--displaying some text and a binding to the firstName property-->
+            <p>Title: {title}</p> 
+            <p>Phone: <lightning-formatted-phone value = {phone}></lightning-formatted-phone></p>
+            <p>Email: <lightning-formatted-email value = {email} hide-icon></lightning-formatted-email></p>
+            <lightning-button label = "Click Here" onclick = {handleSelected}></lightning-button>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,47 @@
+<template>
+    <lightning-card icon-name="standard:opportunity">
+        <h1 slot="title"><a onclick={viewRecord}>{name}</a></h1>
+        <div class="slds-tile">
+            <div class="slds-tile__detail">
+                <dl class="slds-list_horizontal slds-wrap">
+                    <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Stage">Stage:</dt>
+                    <dd class="slds-item_detail slds-truncate" title="Current stage of the Opportunity">{stage}</dd>
+                    <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Amount">Amount:</dt>
+                    <dd class="slds-item_detail slds-truncate" title="Amount of the Opportunity">
+                        <lightning-formatted-number value={amount} format-style="currency" currency-code="USD">
+                        </lightning-formatted-number>
+                    </dd>
+                    <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Close Date">Close Date:</dt>
+                    <dd class="slds-item_detail slds-truncate" title="Close date for the Opportunity">
+                        <lightning-formatted-date-time value={closeDate}></lightning-formatted-date-time>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div slot="actions">
+            <lightning-icon title="Edit" icon-name="utility:edit" size="x-small" onclick={editOpp}></lightning-icon>
+        </div>
+    </lightning-card>
+    <template if:true={modOpen}>
+        <!-- This is where our modal window begins -->
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+            class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <lightning-button-icon icon-name="utility:close" icon-class="slds-button_icon-inverse" 
+                    class="slds-modal__close" title="Close" onclick={closeClick}></lightning-button-icon>
+                <div class="slds-modal__header">
+                    <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Edit Opportunity</h1>
+                </div>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <c-opp-record-form record-id={oppId} object-api-name="Opportunity" layout-type="Compact" 
+                        mode="edit" oncanceled={cancelMod} onsaved={saveMod}></c-opp-record-form>
+                </div>
+                <div class="slds-modal__footer">
+                    <p>This information is the sole property of GenWatt, Inc.</p>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+        <!-- This is where our modal window ends -->
+    </template>
+</template>

@@ -46,7 +46,7 @@ setTimeout(usingSTO, 3000)
 // Keep the line below as the last line of code:
 console.log("This is the last line of code in app.js.");
 
-onst {checkInventory} = require('./library.js');
+const {checkInventory} = require('./library.js');
 
 const order = [['sunglasses', 1], ['bags', 2]];
 

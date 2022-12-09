@@ -1,0 +1,33 @@
+<template>
+    <div class="slds-grid slds-var-m-bottom_small">
+        <div class="slds-col">
+            <lightning-combobox  variant = "label-hidden" placeholder = "Select Sales Priority Filter" 
+            options = {options} onchange = {handleChange}></lightning-combobox>
+        </div>
+        <div class="slds-col">
+            <lightning-button-menu label="Toggle View" onselect={handleToggle} class="slds-float_right">
+                <lightning-menu-item value="card" label="Card" checked = {cardChecked}></lightning-menu-item>
+                <lightning-menu-item value="table" label="Table" checked = {tableChecked}></lightning-menu-item>
+            </lightning-button-menu>
+        </div>
+    </div>
+    <template if:true = {accToDisplay}>
+        <template if:false={tableMode}>
+            <template for:each={displayedOpps} for:item="acc">
+                <div key={acc.Id} class="slds-border_top slds-p-top_xx-small">
+                    <!-- Remember the binding has to match the name of the field -->
+                    <c-target-card acc-id={acc.Id} name={acc.Name} type={acc.Type} industry={acc.Industry}
+                        sales-priority={acc.Sales_Priority__c} onmodsaved={refresh}>
+                    </c-target-card>
+                </div>
+            </template>
+        </template>
+        <template if:true={tableMode}>
+            <lightning-datatable columns={columns} key-field="Id" data={displayedAcc} hide-checkbox-column 
+            onsave={handleSave} draft-values={fldsItemValues}></lightning-datatable>
+        </template>
+    </template>
+    <template if:false={accToDisplay}>
+        <p>No Accounts to display.</p>
+    </template>
+</template>

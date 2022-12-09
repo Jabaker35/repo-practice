@@ -1,0 +1,16 @@
+<template>
+    <div>
+        <p>The user selected: {name}</p>
+        <template if:true={contactsToDisplay}>
+            <template for:each = {contacts} for:item = "con">
+                <div key = {con.Id}>
+                    <c-contact-card name = {con.Name} title = {con.Title} phone = {con.Phone} 
+                    email = {con.Email} onselected = {handleSelected}></c-contact-card>
+                </div>
+            </template>
+        </template>
+        <template if:false={contactsToDisplay}>
+            <p>No related Contact records to display</p>
+        </template>
+    </div>
+</template>

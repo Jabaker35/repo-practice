@@ -1,0 +1,42 @@
+<template>
+    <div class="slds-grid slds-var-m-bottom_small">
+        <div class="slds-col">
+            <lightning-combobox  variant = "label-hidden" placeholder = "Select Stage Filter" options = {options} onchange = {handleChange}></lightning-combobox>
+        </div>
+        <div class="slds-col">
+            <lightning-button-menu label="Toggle View" onselect={handleToggle} class="slds-float_right">
+                <lightning-menu-item value="card" label="Card" checked = {cardChecked}></lightning-menu-item>
+                <lightning-menu-item value="table" label="Table" checked = {tableChecked}></lightning-menu-item>
+            </lightning-button-menu>
+        </div>
+    </div>
+    <div class="slds-tile slds-var-m-bottom_small">
+        <dl class="slds-list_horizontal slds-wrap">
+          <dt class="slds-item_label slds-text-color_weak slds-truncate" title = "Total Amount">Total Amount:</dt>
+          <dd class="slds-item_detail slds-truncate" title = "Total amount of the Opportunities">
+              <lightning-formatted-number value = {totalAmount} format-style = "currency" currency-code = "USD">
+              </lightning-formatted-number></dd>
+          <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Total Records">Total Records:</dt>
+          <dd class="slds-item_detail slds-truncate" title="Record count of the Opportunity">{totalRecords}</dd>
+        </dl>
+    </div>
+    <template if:true = {recordsToDisplay}>
+        <template if:false={tableMode}>
+            <template for:each={displayedOpps} for:item="opp">
+                <div key={opp.Id} class="slds-border_top slds-p-top_xx-small">
+                    <!-- Remember the binding has to match the case and name of the field -->
+                    <c-opp-card opp-id={opp.Id} name={opp.Name} amount={opp.Amount} stage={opp.StageName}
+                        close-date={opp.CloseDate} onmodsaved={refresh}>
+                    </c-opp-card>
+                </div>
+            </template>
+        </template>
+        <template if:true={tableMode}>
+            <lightning-datatable columns={columns} key-field="Id" data={displayedOpps} hide-checkbox-column onsave={handleSave} draft-values={fldsItemValues}>
+            </lightning-datatable>
+        </template>
+    </template>
+    <template if:false={recordsToDisplay}>
+        <p>No related Opportunities to display.</p>
+    </template>
+</template>

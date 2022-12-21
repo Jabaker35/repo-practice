@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <isExposed>true</isExposed>
+    <masterLabel>AccountMessageChannel</masterLabel>
+    <description>Lightning Message Channel to pass the Account ID.</description>
+    <lightningMessageFields>
+        <description>This is the record Id that changed.</description>
+        <fieldName>recordId</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>This is the account name.</description>
+        <fieldName>accountName</fieldName>
+    </lightningMessageFields>
+</LightningMessageChannel>

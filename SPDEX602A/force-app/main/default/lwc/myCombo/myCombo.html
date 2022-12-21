@@ -1,0 +1,13 @@
+<template>
+    <lightning-card>
+        <div class = "slds-var-m-bottom_small">
+            <!-- when creating a combobox you must need an options binding property with
+            value and label in js file -->
+            <lightning-combobox label = "Greetings" options = {greetOptions} onchange = {handleGreet}></lightning-combobox>
+        </div>
+        <div class = "slds-var-m-bottom_small">
+            <lightning-combobox label = "Name" options = {nameOptions} onchange = {handleName}></lightning-combobox>
+        </div>
+        <p>{greeting} {name}!</p>
+    </lightning-card>
+</template>

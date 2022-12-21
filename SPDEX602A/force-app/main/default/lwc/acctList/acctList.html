@@ -1,0 +1,8 @@
+<template>
+    <template for:each={records} for:item="acc">
+        <div key={acc.Id}>
+            <c-acct-card acc-id={acc.Id} name={acc.Name} phone={acc.Phone} 
+            annual-revenue={acc.AnnualRevenue} onselected={handleSelect}></c-acct-card>
+        </div>            
+    </template>
+</template>

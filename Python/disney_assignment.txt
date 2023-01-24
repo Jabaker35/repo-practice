@@ -1,0 +1,29 @@
+# required libraries
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+import seaborn as sns
+import warnings
+warnings.filterwarnings('ignore')
+
+
+Q2 set disney_plus dataset as df
+
+Q3 check missing values & visualize
+
+Q4 Return a Series containing counts of unique values & visualize
+
+Q5 Top 10 directors with most Movies/TV shows & visualize
+
+Q6 TV Show duration & visualize
+
+Q7 Movie Rating  & visualize
+
+Q8 Top 10 directors with most Movies & visualize
+
+Q9 Oldest Movies  & visualize
+
+Q10 Top 10 categories with most movies  & visualize
+
+Q11 Top 10 contries with most movies & visualize
